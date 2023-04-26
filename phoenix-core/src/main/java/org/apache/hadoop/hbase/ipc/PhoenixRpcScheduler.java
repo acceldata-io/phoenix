@@ -109,6 +109,10 @@ public class PhoenixRpcScheduler extends RpcScheduler {
         return this.delegate.getPriorityQueueLength();
     }
 
+    @Override public int getMetaPriorityQueueLength() {
+        return this.delegate.getMetaPriorityQueueLength();
+    }
+
     @Override
     public int getReplicationQueueLength() {
         return this.delegate.getReplicationQueueLength();

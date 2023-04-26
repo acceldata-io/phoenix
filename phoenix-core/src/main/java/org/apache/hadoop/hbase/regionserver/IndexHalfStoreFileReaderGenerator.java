@@ -111,40 +111,52 @@ public class IndexHalfStoreFileReaderGenerator implements RegionObserver, Region
                 }
                 if(scvf != null) scan.setFilter(scvf);
                 metaTable = hbaseConn.getTable(TableName.META_TABLE_NAME);
-                Result result = null;
+                Result splitRegion = null;
                 try (ResultScanner scanner = metaTable.getScanner(scan)) {
-                    result = scanner.next();
+                    splitRegion = scanner.next();
                 }
-                if (result == null || result.isEmpty()) {
-                    Pair<RegionInfo, RegionInfo> mergeRegions =
-                            MetaTableAccessor.getRegionsFromMergeQualifier(ctx.getEnvironment().getConnection(),
-                                region.getRegionInfo().getRegionName());
-                    if (mergeRegions == null || mergeRegions.getFirst() == null) return reader;
+                if (splitRegion == null || splitRegion.isEmpty()) {
+                    List<RegionInfo> mergeRegions =
+                        MetaTableAccessor.getMergeRegions(ctx.getEnvironment().getConnection(),
+                        region.getRegionInfo().getRegionName());
+                    if (mergeRegions == null || mergeRegions.isEmpty()){
+                        return reader;
+                    }
+                    //The region is being merged
                     byte[] splitRow =
                             CellUtil.cloneRow(KeyValueUtil.createKeyValueFromKey(r.getSplitKey()));
                     // We need not change any thing in first region data because first region start key
                     // is equal to merged region start key. So returning same reader.
-                    if (Bytes.compareTo(mergeRegions.getFirst().getStartKey(), splitRow) == 0) {
-                        if (mergeRegions.getFirst().getStartKey().length == 0
-                                && region.getRegionInfo().getEndKey().length != mergeRegions
-                                        .getFirst().getEndKey().length) {
-                            childRegion = mergeRegions.getFirst();
+                    if (Bytes.compareTo(mergeRegions.get(0).getStartKey(), splitRow) == 0) {
+                        if (mergeRegions.get(0).getStartKey().length == 0
+                                && region.getRegionInfo().getEndKey().length
+                                    != mergeRegions.get(0).getEndKey().length) {
+                            childRegion = mergeRegions.get(0);
                             regionStartKeyInHFile =
-                                    mergeRegions.getFirst().getStartKey().length == 0 ? new byte[mergeRegions
-                                            .getFirst().getEndKey().length] : mergeRegions.getFirst()
-                                            .getStartKey();
+                                mergeRegions.get(0).getStartKey().length == 0
+                                    ? new byte[mergeRegions.get(0).getEndKey().length]
+                                    : mergeRegions.get(0).getStartKey();
                         } else {
                             return reader;
                         }
                     } else {
-                        childRegion = mergeRegions.getSecond();
-                        regionStartKeyInHFile = mergeRegions.getSecond().getStartKey();
+                        for (RegionInfo mergeRegion
+                                : mergeRegions.subList(1, mergeRegions.size())) {
+                            if (Bytes.compareTo(mergeRegion.getStartKey(), splitRow) == 0) {
+                                childRegion = mergeRegion;
+                                regionStartKeyInHFile = mergeRegion.getStartKey();
+                                break;
+                            }
+                        }
+                        if (regionStartKeyInHFile == null){
+                            throw new IOException("merged region not found");
+                        }
                     }
                     splitKey = KeyValueUtil.createFirstOnRow(region.getRegionInfo().getStartKey().length == 0 ?
                         new byte[region.getRegionInfo().getEndKey().length] :
                             region.getRegionInfo().getStartKey()).getKey();
                 } else {
-                    RegionInfo parentRegion = MetaTableAccessor.getRegionInfo(result);
+                    RegionInfo parentRegion = MetaTableAccessor.getRegionInfo(splitRegion);
                     regionStartKeyInHFile =
                             parentRegion.getStartKey().length == 0 ? new byte[parentRegion
                                     .getEndKey().length] : parentRegion.getStartKey();
