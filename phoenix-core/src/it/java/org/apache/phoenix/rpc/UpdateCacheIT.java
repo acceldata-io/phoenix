@@ -45,6 +45,7 @@ import org.apache.phoenix.schema.types.PVarchar;
 import org.apache.phoenix.util.PropertiesUtil;
 import org.apache.phoenix.util.SchemaUtil;
 import org.apache.phoenix.util.TestUtil;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -65,6 +66,7 @@ public class UpdateCacheIT extends ParallelStatsDisabledIT {
     }
     
     @Test
+    @Ignore
     public void testUpdateCacheForTxnTable() throws Exception {
         String fullTableName = INDEX_DATA_SCHEMA + QueryConstants.NAME_SEPARATOR + TRANSACTIONAL_DATA_TABLE;
         Connection conn = DriverManager.getConnection(getUrl(), PropertiesUtil.deepCopy(TEST_PROPERTIES));

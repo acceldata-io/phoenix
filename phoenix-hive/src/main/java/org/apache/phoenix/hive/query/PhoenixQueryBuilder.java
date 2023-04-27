@@ -397,7 +397,7 @@ public class PhoenixQueryBuilder {
 
     private String applyDateFunction(String whereClause, String columnName) {
         StringBuilder whereCondition = new StringBuilder();
-        for (Iterator<String> iterator = Splitter.on(CharMatcher.WHITESPACE).omitEmptyStrings()
+        for (Iterator<String> iterator = Splitter.on(CharMatcher.whitespace()).omitEmptyStrings()
                 .split(whereClause).iterator(); iterator.hasNext(); whereCondition.append
                 (PhoenixStorageHandlerConstants.SPACE)) {
             String token = iterator.next();
@@ -497,7 +497,7 @@ public class PhoenixQueryBuilder {
     // Assume timestamp value is yyyy-MM-dd HH:mm:ss.SSS
     private String applyTimestampFunction(String whereClause, String columnName) {
         StringBuilder whereCondition = new StringBuilder();
-        for (Iterator<String> iterator = Splitter.on(CharMatcher.WHITESPACE).omitEmptyStrings()
+        for (Iterator<String> iterator = Splitter.on(CharMatcher.whitespace()).omitEmptyStrings()
                 .split(whereClause).iterator(); iterator.hasNext(); whereCondition.append
                 (PhoenixStorageHandlerConstants.SPACE)) {
             String token = iterator.next();

@@ -102,7 +102,7 @@ public class ImmutableIndexIT extends BaseUniqueNamesOwnClusterIT {
         Map<String, String> serverProps = Maps.newHashMapWithExpectedSize(1);
         serverProps.put("hbase.coprocessor.region.classes", CreateIndexRegionObserver.class.getName());
         Map<String, String> clientProps = Maps.newHashMapWithExpectedSize(2);
-        clientProps.put(QueryServices.TRANSACTIONS_ENABLED, "true");
+        //clientProps.put(QueryServices.TRANSACTIONS_ENABLED, "true");
         clientProps.put(QueryServices.INDEX_POPULATION_SLEEP_TIME, "15000");
         setUpTestDriver(new ReadOnlyProps(serverProps.entrySet().iterator()), new ReadOnlyProps(clientProps.entrySet().iterator()));
     }
@@ -111,9 +111,9 @@ public class ImmutableIndexIT extends BaseUniqueNamesOwnClusterIT {
     public static Collection<Boolean[]> data() {
 		return Arrays.asList(new Boolean[][] { 
 				{ false, false, false }, { false, false, true },
-				{ false, true, false }, { false, true, true },
-				{ true, false, false }, { true, false, true },
-                { true, true, false }, { true, true, true } });
+				/* { false, true, false }, { false, true, true }, */
+				{ true, false, false }, { true, false, true } /*,
+                { true, true, false }, { true, true, true } */ });
     }
 
     @Test

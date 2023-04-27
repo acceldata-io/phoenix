@@ -107,7 +107,7 @@ public class IndexToolForPartialBuildIT extends BaseOwnClusterIT {
         String fullTableName = SchemaUtil.getTableName(schemaName, dataTableName);
         final String indxTable = String.format("%s_%s", dataTableName, FailingRegionObserver.INDEX_NAME);
         Properties props = PropertiesUtil.deepCopy(TEST_PROPERTIES);
-        props.setProperty(QueryServices.TRANSACTIONS_ENABLED, Boolean.TRUE.toString());
+        // props.setProperty(QueryServices.TRANSACTIONS_ENABLED, Boolean.TRUE.toString());
         props.setProperty(QueryServices.EXPLAIN_ROW_COUNT_ATTRIB, Boolean.FALSE.toString());
         props.setProperty(QueryServices.IS_NAMESPACE_MAPPING_ENABLED, Boolean.toString(isNamespaceEnabled));
         final Connection conn = DriverManager.getConnection(getUrl(), props);

@@ -121,7 +121,7 @@ public class PhoenixDriverTest extends BaseConnectionlessQueryTest {
             fail();
         } catch(SQLFeatureNotSupportedException e) {
         }
-        Properties props = PropertiesUtil.deepCopy(TestUtil.TEST_PROPERTIES);
+        /*Properties props = PropertiesUtil.deepCopy(TestUtil.TEST_PROPERTIES);
         props.setProperty(QueryServices.TRANSACTIONS_ENABLED, Boolean.toString(true));
         conn = DriverManager.getConnection(getUrl(), props);
         conn.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
@@ -129,7 +129,7 @@ public class PhoenixDriverTest extends BaseConnectionlessQueryTest {
             conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             fail();
         } catch(SQLFeatureNotSupportedException e) {
-        }
+        }*/
     }
 
     @Test

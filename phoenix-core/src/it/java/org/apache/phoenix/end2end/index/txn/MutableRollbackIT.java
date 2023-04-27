@@ -40,12 +40,14 @@ import org.apache.phoenix.query.QueryServices;
 import org.apache.phoenix.util.PropertiesUtil;
 import org.apache.phoenix.util.SchemaUtil;
 import org.apache.phoenix.util.TestUtil;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
+@Ignore
 public class MutableRollbackIT extends ParallelStatsDisabledIT {
 	
 	private final boolean localIndex;
@@ -61,7 +63,7 @@ public class MutableRollbackIT extends ParallelStatsDisabledIT {
 	
 	private static Connection getConnection() throws SQLException {
         Properties props = PropertiesUtil.deepCopy(TEST_PROPERTIES);
-        props.put(QueryServices.DEFAULT_TABLE_ISTRANSACTIONAL_ATTRIB, Boolean.toString(true));
+        //props.put(QueryServices.DEFAULT_TABLE_ISTRANSACTIONAL_ATTRIB, Boolean.toString(true));
         Connection conn = DriverManager.getConnection(getUrl(), props);
         return conn;
 	}

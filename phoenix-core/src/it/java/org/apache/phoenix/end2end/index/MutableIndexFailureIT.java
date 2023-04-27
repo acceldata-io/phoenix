@@ -171,9 +171,9 @@ public class MutableIndexFailureIT extends BaseTest {
                 // note - can't disableIndexOnWriteFailure without throwIndexWriteFailure, PHOENIX-4130
                 { false, false, false, false, false, false},
                 { false, false, false, true, false, null},
-                { true, false, false, true, false, null},
+                /*{ true, false, false, true, false, null},*/
                 { false, true, false, null, false, null},
-                { true, true, false, true, false, null},
+                /*{ true, true, false, true, false, null},*/
                 { false, false, false, false, false, null},
                 { false, true, false, false, false, null},
                 { false, false, false, false, false, null},

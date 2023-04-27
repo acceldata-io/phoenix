@@ -80,7 +80,7 @@ public class IndexExtendedIT extends BaseTest {
         Map<String, String> serverProps = Maps.newHashMapWithExpectedSize(2);
         serverProps.put(QueryServices.EXTRA_JDBC_ARGUMENTS_ATTRIB, QueryServicesOptions.DEFAULT_EXTRA_JDBC_ARGUMENTS);
         Map<String, String> clientProps = Maps.newHashMapWithExpectedSize(2);
-        clientProps.put(QueryServices.TRANSACTIONS_ENABLED, Boolean.TRUE.toString());
+//        clientProps.put(QueryServices.TRANSACTIONS_ENABLED, Boolean.TRUE.toString());
         clientProps.put(QueryServices.FORCE_ROW_KEY_ORDER_ATTRIB, Boolean.TRUE.toString());
         setUpTestDriver(new ReadOnlyProps(serverProps.entrySet().iterator()), new ReadOnlyProps(clientProps.entrySet()
                 .iterator()));

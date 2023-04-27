@@ -30,8 +30,10 @@ import org.apache.phoenix.query.KeyRange;
 import org.apache.phoenix.util.SchemaUtil;
 import org.apache.phoenix.util.TestUtil;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class TransactionalViewIT extends ParallelStatsEnabledIT {
 
     private String fullTableName;

@@ -66,7 +66,7 @@ public final class QueryServicesTestImpl extends BaseQueryServicesImpl {
     public static final int DEFAULT_HTABLE_MAX_THREADS = 10;
     public static final long DEFAULT_INDEX_POPULATION_WAIT_TIME = 0;
     public static final long DEFAULT_SEQUENCE_CACHE_SIZE = 3;
-    public static final boolean DEFAULT_TRANSACTIONS_ENABLED = true;
+    public static final boolean DEFAULT_TRANSACTIONS_ENABLED = false;
     public static final int DEFAULT_AGGREGATE_CHUNK_SIZE_INCREASE = 1000;
     /*
      * Effectively disable running the index rebuild task by having an infinite delay

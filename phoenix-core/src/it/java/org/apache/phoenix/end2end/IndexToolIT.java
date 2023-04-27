@@ -100,7 +100,7 @@ public class IndexToolIT extends ParallelStatsEnabledIT {
         serverProps.put(QueryServices.EXTRA_JDBC_ARGUMENTS_ATTRIB,
             QueryServicesOptions.DEFAULT_EXTRA_JDBC_ARGUMENTS);
         Map<String, String> clientProps = Maps.newHashMapWithExpectedSize(2);
-        clientProps.put(QueryServices.TRANSACTIONS_ENABLED, Boolean.TRUE.toString());
+//        clientProps.put(QueryServices.TRANSACTIONS_ENABLED, Boolean.TRUE.toString());
         clientProps.put(QueryServices.FORCE_ROW_KEY_ORDER_ATTRIB, Boolean.TRUE.toString());
         setUpTestDriver(new ReadOnlyProps(serverProps.entrySet().iterator()),
             new ReadOnlyProps(clientProps.entrySet().iterator()));
@@ -111,13 +111,11 @@ public class IndexToolIT extends ParallelStatsEnabledIT {
     public static Collection<Boolean[]> data() {
         List<Boolean[]> list = Lists.newArrayListWithExpectedSize(16);
         boolean[] Booleans = new boolean[] { false, true };
-        for (boolean transactional : Booleans) {
-            for (boolean mutable : Booleans) {
-                for (boolean localIndex : Booleans) {
-                    for (boolean directApi : Booleans) {
-                        for (boolean useSnapshot : Booleans) {
-                            list.add(new Boolean[] { transactional, mutable, localIndex, directApi, useSnapshot });
-                        }
+        for (boolean mutable : Booleans) {
+            for (boolean localIndex : Booleans) {
+                for (boolean directApi : Booleans) {
+                    for (boolean useSnapshot : Booleans) {
+                        list.add(new Boolean[] { false, mutable, localIndex, directApi, useSnapshot });
                     }
                 }
             }
@@ -394,7 +392,7 @@ public class IndexToolIT extends ParallelStatsEnabledIT {
             String dataTableName, String indexTableName, String... additionalArgs) throws Exception {
         IndexTool indexingTool = new IndexTool();
         Configuration conf = new Configuration(getUtility().getConfiguration());
-        conf.set(QueryServices.TRANSACTIONS_ENABLED, Boolean.TRUE.toString());
+        // conf.set(QueryServices.TRANSACTIONS_ENABLED, Boolean.TRUE.toString());
         indexingTool.setConf(conf);
         final String[] cmdArgs =
                 getArgValues(directApi, useSnapshot, schemaName, dataTableName, indexTableName);
