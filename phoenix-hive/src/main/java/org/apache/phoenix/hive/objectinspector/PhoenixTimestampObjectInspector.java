@@ -17,17 +17,17 @@
  */
 package org.apache.phoenix.hive.objectinspector;
 
-import org.apache.hadoop.hive.serde2.io.TimestampWritable;
+import org.apache.hadoop.hive.common.type.Timestamp;
+import org.apache.hadoop.hive.serde2.io.TimestampWritableV2;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.TimestampObjectInspector;
 import org.apache.hadoop.hive.serde2.typeinfo.TypeInfoFactory;
 
-import java.sql.Timestamp;
 
 /**
  * ObjectInspector for timestamp type
  */
 public class PhoenixTimestampObjectInspector extends
-        AbstractPhoenixObjectInspector<TimestampWritable>
+        AbstractPhoenixObjectInspector<TimestampWritableV2>
         implements TimestampObjectInspector {
 
     public PhoenixTimestampObjectInspector() {
@@ -35,22 +35,25 @@ public class PhoenixTimestampObjectInspector extends
     }
 
     @Override
-    public Timestamp getPrimitiveJavaObject(Object o) {
-        return (Timestamp) o;
-    }
-
-    @Override
     public Object copyObject(Object o) {
-        return o == null ? null : new Timestamp(((Timestamp) o).getTime());
+        return o == null ? null : java.sql.Timestamp.valueOf(o.toString());
     }
 
     @Override
-    public TimestampWritable getPrimitiveWritableObject(Object o) {
-        TimestampWritable value = null;
+    public Timestamp getPrimitiveJavaObject(Object o) {
+        if (o == null) {
+            return null;
+        }
+        return Timestamp.valueOf(((java.sql.Timestamp) o).toString());
+    }
+
+    @Override
+    public TimestampWritableV2 getPrimitiveWritableObject(Object o) {
+        TimestampWritableV2 value = null;
 
         if (o != null) {
             try {
-                value = new TimestampWritable((Timestamp) o);
+                value = new TimestampWritableV2(getPrimitiveJavaObject(o));
             } catch (Exception e) {
                 logExceptionMessage(o, "TIMESTAMP");
             }

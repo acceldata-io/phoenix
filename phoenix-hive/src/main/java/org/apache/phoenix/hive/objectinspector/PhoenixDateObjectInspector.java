@@ -17,17 +17,16 @@
  */
 package org.apache.phoenix.hive.objectinspector;
 
-import org.apache.hadoop.hive.serde2.io.DateWritable;
+import org.apache.hadoop.hive.common.type.Date;
+import org.apache.hadoop.hive.serde2.io.DateWritableV2;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.DateObjectInspector;
 import org.apache.hadoop.hive.serde2.typeinfo.TypeInfoFactory;
-
-import java.sql.Date;
 
 /**
  * ObjectInspector for date type
  */
 
-public class PhoenixDateObjectInspector extends AbstractPhoenixObjectInspector<DateWritable>
+public class PhoenixDateObjectInspector extends AbstractPhoenixObjectInspector<DateWritableV2>
         implements DateObjectInspector {
 
     public PhoenixDateObjectInspector() {
@@ -36,28 +35,31 @@ public class PhoenixDateObjectInspector extends AbstractPhoenixObjectInspector<D
 
     @Override
     public Object copyObject(Object o) {
-        return o == null ? null : new Date(((Date) o).getTime());
-    }
-
-    @Override
-    public DateWritable getPrimitiveWritableObject(Object o) {
-        DateWritable value = null;
-
-        if (o != null) {
-            try {
-                value = new DateWritable((Date) o);
-            } catch (Exception e) {
-                logExceptionMessage(o, "DATE");
-                value = new DateWritable();
-            }
-        }
-
-        return value;
+        return o == null ? null : java.sql.Date.valueOf(o.toString());
     }
 
     @Override
     public Date getPrimitiveJavaObject(Object o) {
-        return (Date) o;
+        if (o == null) {
+            return null;
+        }
+        return Date.valueOf(((java.sql.Date) o).toString());
+    }
+
+    @Override
+    public DateWritableV2 getPrimitiveWritableObject(Object o) {
+        DateWritableV2 value = null;
+
+        if (o != null) {
+            try {
+                value = new DateWritableV2(getPrimitiveJavaObject(o));
+            } catch (Exception e) {
+                logExceptionMessage(o, "DATE");
+                value = new DateWritableV2();
+            }
+        }
+
+        return value;
     }
 
 }

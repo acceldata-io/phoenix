@@ -20,8 +20,10 @@ package org.apache.phoenix.hive;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hive.common.type.Date;
 import org.apache.hadoop.hive.common.type.HiveChar;
 import org.apache.hadoop.hive.common.type.HiveDecimal;
+import org.apache.hadoop.hive.common.type.Timestamp;
 import org.apache.hadoop.hive.serde2.SerDeException;
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.PrimitiveObjectInspector;
@@ -136,6 +138,10 @@ public class PhoenixSerializer {
                             value = ((HiveDecimal) value).bigDecimalValue();
                         } else if (value instanceof HiveChar) {
                             value = ((HiveChar) value).getValue().trim();
+                        } else if (value instanceof Date) {
+                            value = java.sql.Date.valueOf(value.toString());
+                        } else if (value instanceof Timestamp) {
+                            value = java.sql.Timestamp.valueOf(value.toString());
                         }
 
                         pResultWritable.add(value);
