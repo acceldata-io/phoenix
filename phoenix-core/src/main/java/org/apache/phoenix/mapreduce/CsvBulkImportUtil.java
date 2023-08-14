@@ -22,11 +22,6 @@ import java.util.Base64;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-<<<<<<< HEAD
-=======
-//import org.apache.hadoop.hbase.util.Base64;
-import java.util.Base64;
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.phoenix.mapreduce.util.PhoenixConfigurationUtil;
 import org.apache.phoenix.query.QueryConstants;
@@ -75,16 +70,11 @@ public class CsvBulkImportUtil {
     }
 
     @VisibleForTesting
-<<<<<<< HEAD
     static void setChar(Configuration conf, String confKey, Character charValue) {
         if(charValue!=null) {
             conf.set(confKey, Bytes.toString(Base64.getEncoder().encode(
                     charValue.toString().getBytes(StandardCharsets.UTF_8))));
         }
-=======
-    static void setChar(Configuration conf, String confKey, char charValue) {
-        conf.set(confKey, Bytes.toString(Base64.getEncoder().encode(Character.toString(charValue).getBytes())));
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
     }
 
     @VisibleForTesting
@@ -93,12 +83,8 @@ public class CsvBulkImportUtil {
         if (strValue == null) {
             return null;
         }
-<<<<<<< HEAD
         return new String(Base64.getDecoder().decode(strValue.getBytes(StandardCharsets.UTF_8)),
             StandardCharsets.UTF_8).charAt(0);
-=======
-        return new String(Base64.getDecoder().decode(strValue)).charAt(0);
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
     }
 
     public static Path getOutputPath(Path outputdir, String tableName) {

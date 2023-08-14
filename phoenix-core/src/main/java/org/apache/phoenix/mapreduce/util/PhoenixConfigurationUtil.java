@@ -34,11 +34,6 @@ import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HConstants;
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
 import org.apache.hadoop.hbase.mapreduce.TableMapReduceUtil;
-<<<<<<< HEAD
-=======
-//import org.apache.hadoop.hbase.util.Base64;
-import java.util.Base64;
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.db.DBInputFormat.NullDBWritable;

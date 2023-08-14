@@ -37,7 +37,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-<<<<<<< HEAD
 import org.apache.phoenix.thirdparty.com.google.common.annotations.VisibleForTesting;
 import org.apache.phoenix.thirdparty.com.google.common.base.Strings;
 import org.apache.phoenix.hbase.index.AbstractValueGetter;
@@ -49,16 +48,6 @@ import org.apache.phoenix.thirdparty.org.apache.commons.cli.Option;
 import org.apache.phoenix.thirdparty.org.apache.commons.cli.Options;
 import org.apache.phoenix.thirdparty.org.apache.commons.cli.ParseException;
 import org.apache.commons.lang3.exception.ExceptionUtils;
-=======
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-//import org.apache.commons.cli.DefaultParser;
-import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
-import org.apache.commons.lang.exception.ExceptionUtils;
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileSystem;
@@ -111,11 +100,7 @@ import org.apache.phoenix.schema.PIndexState;
 import org.apache.phoenix.schema.PTable;
 import org.apache.phoenix.schema.PTable.IndexType;
 import org.apache.phoenix.schema.TableRef;
-<<<<<<< HEAD
 import org.apache.phoenix.schema.types.PVarchar;
-=======
-import org.apache.phoenix.thirdparty.org.apache.commons.cli.DefaultParser;
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
 import org.apache.phoenix.util.ByteUtil;
 import org.apache.phoenix.util.ColumnInfo;
 import org.apache.phoenix.util.EnvironmentEdgeManager;
@@ -368,11 +353,7 @@ public class IndexTool extends Configured implements Tool {
 
         final Options options = getOptions();
 
-<<<<<<< HEAD
         CommandLineParser parser = new DefaultParser(false, false);
-=======
-        CommandLineParser parser = (CommandLineParser) new DefaultParser();
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
         CommandLine cmdLine = null;
         try {
             cmdLine = parser.parse(options, args);

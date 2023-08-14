@@ -21,11 +21,6 @@ import java.sql.Types;
 import java.text.Format;
 import java.util.Base64;
 
-<<<<<<< HEAD
-=======
-//import org.apache.hadoop.hbase.util.Base64;
-import java.util.Base64;
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
 import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.phoenix.schema.SortOrder;
 import org.apache.phoenix.util.ByteUtil;

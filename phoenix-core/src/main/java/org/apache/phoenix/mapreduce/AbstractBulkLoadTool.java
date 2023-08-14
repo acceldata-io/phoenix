@@ -27,7 +27,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-<<<<<<< HEAD
 import org.apache.phoenix.thirdparty.org.apache.commons.cli.CommandLine;
 import org.apache.phoenix.thirdparty.org.apache.commons.cli.CommandLineParser;
 import org.apache.phoenix.thirdparty.org.apache.commons.cli.DefaultParser;
@@ -35,14 +34,6 @@ import org.apache.phoenix.thirdparty.org.apache.commons.cli.HelpFormatter;
 import org.apache.phoenix.thirdparty.org.apache.commons.cli.Option;
 import org.apache.phoenix.thirdparty.org.apache.commons.cli.Options;
 import org.apache.phoenix.thirdparty.org.apache.commons.cli.ParseException;
-=======
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -67,7 +58,6 @@ import org.apache.phoenix.mapreduce.bulkload.TargetTableRefFunctions;
 import org.apache.phoenix.query.QueryConstants;
 import org.apache.phoenix.schema.PTable;
 import org.apache.phoenix.schema.PTable.IndexType;
-import org.apache.phoenix.thirdparty.org.apache.commons.cli.DefaultParser;
 import org.apache.phoenix.util.ColumnInfo;
 import org.apache.phoenix.util.IndexUtil;
 import org.apache.phoenix.util.PhoenixRuntime;
@@ -138,11 +128,7 @@ public abstract class AbstractBulkLoadTool extends Configured implements Tool {
 
         Options options = getOptions();
 
-<<<<<<< HEAD
         CommandLineParser parser = new DefaultParser(false, false);
-=======
-        CommandLineParser parser = (CommandLineParser) new DefaultParser();
->>>>>>> 6c9df752363764732be50446859c33cee36d2ab4
         CommandLine cmdLine = null;
         try {
             cmdLine = parser.parse(options, args);
