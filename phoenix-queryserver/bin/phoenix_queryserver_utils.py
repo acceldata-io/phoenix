@@ -76,7 +76,7 @@ def findClasspath(command_name):
     return tryDecode(subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read())
 
 def setPath():
-    PHOENIX_CLIENT_JAR_PATTERN = "phoenix-client-*.jar"
+    PHOENIX_CLIENT_JAR_PATTERN = "phoenix-client-hbase-*.jar"
     OLD_PHOENIX_CLIENT_JAR_PATTERN = "phoenix-*[!n]-client.jar"
     PHOENIX_THIN_CLIENT_JAR_PATTERN = "phoenix-queryserver-client-*.jar"
     PHOENIX_QUERYSERVER_JAR_PATTERN = "phoenix-queryserver-[!c]*.jar"
@@ -137,9 +137,9 @@ def setPath():
     global phoenix_queryserver_jar
     phoenix_queryserver_jar = find(PHOENIX_QUERYSERVER_JAR_PATTERN, os.path.join(current_dir, "..", "queryserver", "target", "*"))
     if phoenix_queryserver_jar == "":
-        phoenix_queryserver_jar = findFileInPathWithoutRecursion(PHOENIX_QUERYSERVER_JAR_PATTERN, os.path.join(current_dir, "..", "lib"))
-    if phoenix_queryserver_jar == "":
         phoenix_queryserver_jar = findFileInPathWithoutRecursion(PHOENIX_QUERYSERVER_JAR_PATTERN, os.path.join(current_dir, ".."))
+    if phoenix_queryserver_jar == "":
+        phoenix_queryserver_jar = findFileInPathWithoutRecursion(PHOENIX_QUERYSERVER_JAR_PATTERN, os.path.join(current_dir, "..", "lib"))
 
     global phoenix_loadbalancer_jar
     phoenix_loadbalancer_jar = find(PHOENIX_LOADBALANCER_JAR_PATTERN, os.path.join(current_dir, "..", "load-balancer", "target", "*"))
