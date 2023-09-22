@@ -35,6 +35,9 @@
 
   <properties>
     <top.dir>${project.basedir}/..</top.dir>
+    <spark.version>2.4.8.3.2.2.0-1</spark.version>
+    <scala.version>2.11.12</scala.version>
+    <scala.binary.version>2.11</scala.binary.version>
     <skip-scala-tests>true</skip-scala-tests>
   </properties>
 
@@ -92,6 +95,7 @@
     <dependency>
       <groupId>org.apache.phoenix</groupId>
       <artifactId>phoenix-hbase-compat-${hbase.compat.version}</artifactId>
+	      <version>5.1.3</version>
       <scope>runtime</scope>
       <optional>true</optional>
     </dependency>

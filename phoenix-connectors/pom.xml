@@ -20,7 +20,7 @@
     <name>Apache Software Foundation</name>
     <url>http://www.apache.org</url>
   </organization>
-
+ 
   <repositories>
     <repository>
       <id>apache release</id>
@@ -80,7 +80,7 @@
     <hive-storage.version>${hive3-storage.version}</hive-storage.version>
     <flume.version>1.4.0</flume.version>
     <kafka.version>2.8.2.3.2.2.0-1</kafka.version>
-    <spark.version>2.4.8.4.3.2.2.0-1</spark.version>
+    <spark.version>2.4.8.3.2.2.0-1</spark.version>
     <spark3.version>3.2.2.3.2.2.0-1</spark3.version>
     <scala.version>2.11.12</scala.version>
     <scala.binary.version>2.11</scala.binary.version>
@@ -483,7 +483,7 @@
       <dependency>
         <groupId>org.apache.phoenix</groupId>
         <artifactId>phoenix-hbase-compat-${hbase.compat.version}</artifactId>
-        <version>${phoenix.version}</version>
+        <version>5.1.3</version>
       </dependency>
       <dependency>
         <groupId>org.apache.phoenix</groupId>
