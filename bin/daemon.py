@@ -729,9 +729,9 @@ def is_socket(fd):
         """
     result = False
 
-    file_socket = socket.fromfd(fd, socket.AF_INET, socket.SOCK_RAW)
 
     try:
+        file_socket = socket.fromfd(fd, socket.AF_INET, socket.SOCK_RAW)
         socket_type = file_socket.getsockopt(
                 socket.SOL_SOCKET, socket.SO_TYPE)
     except socket.error as exc:
