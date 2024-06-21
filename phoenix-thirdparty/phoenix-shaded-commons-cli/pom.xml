@@ -23,7 +23,7 @@
   <parent>
     <groupId>org.apache.phoenix.thirdparty</groupId>
     <artifactId>phoenix-thirdparty</artifactId>
-    <version>5.1.3.3.3.0.0-SNAPSHOT</version>
+    <version>5.1.3.3.2.3.0-SNAPSHOT</version>
   </parent>
   <artifactId>phoenix-shaded-commons-cli</artifactId>
   <name>Apache Phoenix Patched and Relocated (Shaded) Commons-CLI</name>
