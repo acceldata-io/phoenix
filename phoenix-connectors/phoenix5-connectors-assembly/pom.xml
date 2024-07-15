@@ -53,14 +53,16 @@
       <groupId>org.apache.phoenix</groupId>
       <artifactId>phoenix5-kafka</artifactId>
     </dependency>
+    <!--
     <dependency>
       <groupId>org.apache.phoenix</groupId>
       <artifactId>phoenix5-spark</artifactId>
     </dependency>
+   
     <dependency>
       <groupId>org.apache.phoenix</groupId>
       <artifactId>phoenix5-spark-shaded</artifactId>
-    </dependency>
+    </dependency> -->
     <dependency>
       <groupId>org.apache.phoenix</groupId>
       <artifactId>phoenix5-spark3-shaded</artifactId>
@@ -119,7 +121,8 @@
                 </argument>
               </arguments>
             </configuration>
-          </execution>
+    </execution>
+      <!--
           <execution>
             <id>spark without version</id>
             <phase>package</phase>
@@ -139,7 +142,7 @@
                 </argument>
               </arguments>
             </configuration>
-          </execution>
+	  </execution> -->
           <execution>
             <id>spark3 without version</id>
             <phase>package</phase>
