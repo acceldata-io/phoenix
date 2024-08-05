@@ -148,7 +148,7 @@
     <jcip-annotations.version>1.0-1</jcip-annotations.version>
     <jsr305.version>2.0.1</jsr305.version>
     <snappy.version>0.3</snappy.version>
-    <commons-codec.version>1.7</commons-codec.version>
+    <commons-codec.version>1.14</commons-codec.version>
     <htrace.version>3.1.0-incubating</htrace.version>
     <collections.version>3.2.2</collections.version>
     <jodatime.version>2.10.5</jodatime.version>
@@ -159,9 +159,9 @@
     <icu4j.version>72.1</icu4j.version>
     <guice.version>4.0</guice.version>
     <zookeeper.version>3.8.4.3.3.6.0-1</zookeeper.version>
-    <curator.version>4.0.0</curator.version>
+    <curator.version>4.2.0</curator.version>
     <jcodings.version>1.0.55</jcodings.version>
-    <thrift.version>0.9.3-1</thrift.version>
+    <thrift.version>0.16.0</thrift.version>
     <!-- Test Dependencies -->
     <mockito.version>1.10.19</mockito.version>
     <junit.version>4.13.1</junit.version>
