@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env ambari-python-wrap
 # -*- coding: utf-8 -*-
 ############################################################################
 #
