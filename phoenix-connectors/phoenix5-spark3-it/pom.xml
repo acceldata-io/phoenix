@@ -34,7 +34,6 @@
 
   <properties>
     <top.dir>${project.basedir}/..</top.dir>
-    <spark.version>${spark3.version}</spark.version>
     <scala.version>2.12.10</scala.version>
     <scala.binary.version>2.12</scala.binary.version>
   </properties>
