@@ -25,7 +25,7 @@
   <parent>
     <artifactId>phoenix-connectors</artifactId>
     <groupId>org.apache.phoenix</groupId>
-    <version>6.0.0-SNAPSHOT</version>
+    <version>5.1.3.3.3.6.1-1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
@@ -206,7 +206,7 @@
               <goal>test</goal>
             </goals>
             <configuration>
-              <!-- Need this false until we can switch to JUnit 4.13 due 
+              <!-- Need this false until we can switch to JUnit 4.13 due
                 to https://github.com/junit-team/junit4/issues/1223 -->
               <parallel>false</parallel>
               <tagsToExclude>Integration-Test</tagsToExclude>
