@@ -17,13 +17,13 @@
  */
 package org.apache.phoenix.kafka.consumer;
 
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
-import org.apache.commons.cli.PosixParser;
+import org.apache.phoenix.thirdparty.org.apache.commons.cli.CommandLine;
+import org.apache.phoenix.thirdparty.org.apache.commons.cli.CommandLineParser;
+import org.apache.phoenix.thirdparty.org.apache.commons.cli.HelpFormatter;
+import org.apache.phoenix.thirdparty.org.apache.commons.cli.Option;
+import org.apache.phoenix.thirdparty.org.apache.commons.cli.Options;
+import org.apache.phoenix.thirdparty.org.apache.commons.cli.ParseException;
+import org.apache.phoenix.thirdparty.org.apache.commons.cli.PosixParser;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -36,7 +36,7 @@ public class PhoenixConsumerTool extends Configured implements Tool {
     private static final Logger logger = LoggerFactory.getLogger(PhoenixConsumerTool.class);
     static final Option FILE_PATH_OPT = new Option("f", "file", true, "input file path");
     static final Option HELP_OPT = new Option("h", "help", false, "Show this help and quit");
-    
+
     public static Options getOptions() {
         Options options = new Options();
         options.addOption(FILE_PATH_OPT);
@@ -92,14 +92,14 @@ public class PhoenixConsumerTool extends Configured implements Tool {
         } catch (IllegalStateException e) {
             printHelpAndExit(e.getMessage(), getOptions());
         }
-        
+
         String path = cmdLine.getOptionValue(FILE_PATH_OPT.getOpt());
         conf.set("kafka.consumer.file", path);
         new PhoenixConsumer(conf);
-        
+
         return 1;
     }
-    
+
     public static void main(String[] args) throws Exception {
         int exitStatus = ToolRunner.run(new PhoenixConsumerTool(), args);
         System.exit(exitStatus);
