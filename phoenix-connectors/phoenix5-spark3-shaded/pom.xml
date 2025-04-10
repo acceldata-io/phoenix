@@ -25,7 +25,7 @@
   <parent>
     <artifactId>phoenix-connectors</artifactId>
     <groupId>org.apache.phoenix</groupId>
-    <version>6.0.0-SNAPSHOT</version>
+    <version>5.1.3.3.3.6.1-1</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
@@ -228,7 +228,7 @@
 
   <build>
     <plugins>
-      <!-- Taken from phoenix-client-parent this should be kept in sync with 
+      <!-- Taken from phoenix-client-parent this should be kept in sync with
         Phoenix as much as possible -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -441,7 +441,7 @@
               <pattern>net/</pattern>
               <shadedPattern>${shaded.package}.net.</shadedPattern>
               <excludes>
-                <!-- Exclude config keys for Hadoop that look like package 
+                <!-- Exclude config keys for Hadoop that look like package
                   names -->
                 <exclude>net/topology/**</exclude>
               </excludes>
