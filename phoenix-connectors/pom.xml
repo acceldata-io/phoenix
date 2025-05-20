@@ -484,6 +484,7 @@
             <exclude>**/patchprocess/**</exclude>
             <exclude>**/derby.log</exclude>
             <exclude>**/target/*</exclude>
+            <exclude>**/dependency-reduced-pom.xml</exclude>
           </excludes>
         </configuration>
       </plugin>

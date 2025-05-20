@@ -690,6 +690,12 @@
             <!-- tmp files -->
             <exclude>dev/work/**</exclude>
             <exclude>dev/artifacts/**</exclude>
+            <!-- short docs text files don't need header -->
+            <exclude>python-phoenixdb/NEWS.rst</exclude>
+            <exclude>python-phoenixdb/README.rst</exclude>
+            <exclude>python-phoenixdb/dev-support/rat-excludes.txt</exclude>
+            <exclude>python-phoenixdb/RELEASING.rst</exclude>
+            <exclude>**/dependency-reduced-pom.xml</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -713,7 +719,7 @@
       </dependency>
       <dependency>
         <groupId>org.apache.phoenix</groupId>
-        <artifactId>phoenix-core-client</artifactId>
+        <artifactId>phoenix-core-server</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
