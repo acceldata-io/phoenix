@@ -48,7 +48,7 @@
                   import java.util.regex.Pattern;
                   import java.lang.Integer;
 
-                  versionPattern = Pattern.compile("(\\d+)\\.(\\d+)\\.(\\d+)[^.]*$");
+                  versionPattern = Pattern.compile("^(\\d+)\\.(\\d+)\\.(\\d+)");
                   versionMatcher = versionPattern.matcher("${hbase.version}");
                   versionMatcher.find();
 
