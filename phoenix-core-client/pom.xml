@@ -28,6 +28,10 @@
   <name>Phoenix Core Client</name>
   <description>Core Phoenix Client codebase</description>
 
+  <properties>
+    <hbase.version>2.6.2-hadoop3</hbase.version>
+  </properties>
+
   <build>
     <plugins>
       <!-- Add the ant-generated sources to the source path -->
@@ -48,7 +52,7 @@
                   import java.util.regex.Pattern;
                   import java.lang.Integer;
 
-                  versionPattern = Pattern.compile("^(\\d+)\\.(\\d+)\\.(\\d+)");
+                  versionPattern = Pattern.compile("(\\d+)\\.(\\d+)\\.(\\d+)[^.]*$");
                   versionMatcher = versionPattern.matcher("${hbase.version}");
                   versionMatcher.find();
 
@@ -238,34 +242,42 @@
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-common</artifactId>
+      <version>${hbase.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-metrics-api</artifactId>
+      <version>${hbase.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-client</artifactId>
+      <version>${hbase.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-hadoop-compat</artifactId>
+      <version>${hbase.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-hadoop2-compat</artifactId>
+      <version>${hbase.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-zookeeper</artifactId>
+      <version>${hbase.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-protocol</artifactId>
+      <version>${hbase.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-protocol-shaded</artifactId>
+      <version>${hbase.version}</version>
     </dependency>
 
     <!-- HBase Adjacent Dependencies -->
