@@ -29,7 +29,7 @@
   <description>Core Phoenix Client codebase</description>
 
   <properties>
-    <hbase.version>2.6.2-hadoop3</hbase.version>
+    <hbase.version>2.6.2.3.3.6.2-1</hbase.version>
   </properties>
 
   <build>
@@ -52,7 +52,7 @@
                   import java.util.regex.Pattern;
                   import java.lang.Integer;
 
-                  versionPattern = Pattern.compile("(\\d+)\\.(\\d+)\\.(\\d+)[^.]*$");
+                  versionPattern = Pattern.compile("^(\\d+)\\.(\\d+)\\.(\\d+)");
                   versionMatcher = versionPattern.matcher("${hbase.version}");
                   versionMatcher.find();
 
