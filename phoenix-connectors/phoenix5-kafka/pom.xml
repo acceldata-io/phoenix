@@ -27,7 +27,7 @@
   <parent>
     <groupId>org.apache.phoenix</groupId>
     <artifactId>phoenix-connectors</artifactId>
-    <version>5.1.3.3.3.6.1-1</version>
+    <version>5.1.3.3.3.6.1-101</version>
   </parent>
   <artifactId>phoenix5-kafka</artifactId>
   <name>Phoenix Kafka Connector for Phoenix 5</name>

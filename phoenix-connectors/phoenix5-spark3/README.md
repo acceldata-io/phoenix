@@ -20,10 +20,10 @@ and enables persisting DataFrames back to Phoenix.
 
 ## Configuring Spark to use the connector
 
-Use the shaded connector JAR `phoenix5-spark3-shaded-5.1.3.3.3.6.1-1.jar` .
+Use the shaded connector JAR `phoenix5-spark3-shaded-5.1.3.3.3.6.1-101.jar` .
 Apart from the shaded connector JAR, you also need to add the hbase mapredcp libraries and the hbase configuration directory to the classpath. The final classpath should be something like
 
-`/etc/hbase/conf:$(hbase mapredcp):phoenix5-spark3-shaded-5.1.3.3.3.6.1-1.jar`
+`/etc/hbase/conf:$(hbase mapredcp):phoenix5-spark3-shaded-5.1.3.3.3.6.1-101.jar`
 
 (add the exact paths as appropiate to your system)
 Both the `spark.driver.extraClassPath` and `spark.executor.extraClassPath` properties need to be set the above classpath. You may add them spark-defaults.conf, or specify them on the spark-shell or spark-submit command line.
