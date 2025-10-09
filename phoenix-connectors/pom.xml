@@ -36,7 +36,7 @@
   <parent>
     <groupId>org.apache.phoenix</groupId>
     <artifactId>phoenix</artifactId>
-    <version>5.1.3.3.3.6.0-101</version>
+    <version>5.1.3.3.3.6.0-102</version>
   </parent>
 
   <scm>
@@ -62,13 +62,13 @@
 
   <properties>
     <!-- Phoenix Version -->
-    <phoenix.version>5.1.3.3.3.6.0-101</phoenix.version>
+    <phoenix.version>5.1.3.3.3.6.0-102</phoenix.version>
     <phoenix.thirdparty.version>2.0.0</phoenix.thirdparty.version>
     <!-- Hadoop Versions -->
-    <hbase.version>2.5.8.3.3.6.0-101</hbase.version>
+    <hbase.version>2.5.8.3.3.6.0-102</hbase.version>
     <hbase.compat.version>2.4.1</hbase.compat.version>
-    <hadoop.version>3.3.6.3.3.6.0-101</hadoop.version>
-    <zookeeper.version>3.8.4.3.3.6.0-101</zookeeper.version>
+    <hadoop.version>3.3.6.3.3.6.0-102</hadoop.version>
+    <zookeeper.version>3.8.4.3.3.6.0-102</zookeeper.version>
 
     <hbase-thirdparty-version>2.1.0</hbase-thirdparty-version>
     
