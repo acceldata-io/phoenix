@@ -1,0 +1,34 @@
+#general java
+*.class
+*.war
+*.jar
+
+# python
+*.pyc
+.checkstyle
+
+# eclipse stuffs
+.settings/*
+**/.settings/
+.classpath
+.project
+*/.externalToolBuilders
+*/maven-eclipse.xml
+
+# intellij stuff
+.idea/
+*.iml
+*.ipr
+*.iws
+
+#maven stuffs
+target/
+release/
+RESULTS/
+CSV_EXPORT/
+.DS_Store
+
+phoenix-hbase-compat-1.3.0/
+phoenix-hbase-compat-1.4.0/
+phoenix-hbase-compat-1.5.0/
+*/hbase.log
