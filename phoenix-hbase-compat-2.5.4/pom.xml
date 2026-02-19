@@ -23,7 +23,7 @@
   <parent>
     <groupId>org.apache.phoenix</groupId>
     <artifactId>phoenix</artifactId>
-    <version>5.2.1.3.2.3.5-SNAPSHOT</version>
+    <version>5.2.1.3.2.3.6-2</version>
   </parent>
 
   <artifactId>phoenix-hbase-compat-2.5.4</artifactId>
@@ -31,7 +31,7 @@
   <description>Compatibility module for HBase 2.5.4+</description>
 
   <properties>
-    <hbase25.compat.version>2.5.10.3.2.3.5-SNAPSHOT</hbase25.compat.version>
+    <hbase25.compat.version>2.5.10.3.2.3.6-2</hbase25.compat.version>
   </properties>
 
   <dependencies>
