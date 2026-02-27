@@ -142,7 +142,7 @@
     <antlr.version>3.5.2</antlr.version>
     <!-- Only used for tests with HBase 2.1-2.4 -->
     <reload4j.version>1.2.19</reload4j.version>
-    <log4j2.version>2.18.0</log4j2.version>
+    <log4j2.version>2.25.3</log4j2.version>
     <disruptor.version>3.3.6</disruptor.version>
     <slf4j.version>1.7.36</slf4j.version>
     <!-- com.google repo will be used except on Aarch64 platform. -->
@@ -150,7 +150,7 @@
     <protobuf-java.version>2.5.0</protobuf-java.version>
     <protoc.version>2.5.0</protoc.version>
     <commons-io.version>2.14.0</commons-io.version>
-    <commons-lang3.version>3.8</commons-lang3.version>
+    <commons-lang3.version>3.18.0</commons-lang3.version>
     <commons-csv.version>1.0</commons-csv.version>
     <commons-compress.version>1.26.0</commons-compress.version>
     <sqlline.version>1.9.0</sqlline.version>
