@@ -82,7 +82,7 @@
     <hbase-2.6.3.runtime.version>2.6.3-hadoop3</hbase-2.6.3.runtime.version>
     <hbase-2.6.runtime.version>2.6.4.3.4.3.0-1</hbase-2.6.runtime.version>
 
-    <compileSource>1.8</compileSource>
+    <compileSource>17</compileSource>
     <maven.compiler.source>${compileSource}</maven.compiler.source>
     <maven.compiler.target>${compileSource}</maven.compiler.target>
 
@@ -1641,7 +1641,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.6.1</version>
           <configuration>
             <ignoredUnusedDeclaredDependencies>
               <ignoredUnusedDeclaredDependency>org.apache.omid:*</ignoredUnusedDeclaredDependency>
