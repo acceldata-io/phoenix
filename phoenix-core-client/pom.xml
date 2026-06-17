@@ -29,7 +29,8 @@
   <description>Core Phoenix Client codebase</description>
 
   <properties>
-    <hbase.version>2.6.2.3.3.6.5-SNAPSHOT</hbase.version>
+    <odp.release.version>3.3.6.5-SNAPSHOT</odp.release.version>
+    <hbase.version>2.6.2.${odp.release.version}</hbase.version>
   </properties>
 
   <build>

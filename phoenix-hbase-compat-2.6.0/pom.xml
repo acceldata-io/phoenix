@@ -31,7 +31,8 @@
   <description>Compatibility module for HBase 2.6.0+</description>
 
   <properties>
-    <hbase26.compat.version>2.6.2.3.3.6.5-SNAPSHOT</hbase26.compat.version>
+    <odp.release.version>3.3.6.5-SNAPSHOT</odp.release.version>
+    <hbase26.compat.version>2.6.2.${odp.release.version}</hbase26.compat.version>
   </properties>
 
   <dependencies>
