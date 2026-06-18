@@ -163,6 +163,8 @@
     <jodatime.version>2.10.5</jodatime.version>
     <joni.version>2.1.31</joni.version>
     <omid.version>1.1.2</omid.version>
+    <!-- CVE-2025-48734: force commons-beanutils >= 1.11.0, transitive via OMID -->
+    <commons-beanutils.version>1.11.0</commons-beanutils.version>
     <stream.version>2.9.5</stream.version>
     <icu4j.version>72.1</icu4j.version>
     <guice.version>5.1.0</guice.version>
@@ -1843,6 +1845,11 @@
         <groupId>org.glassfish</groupId>
         <artifactId>javax.el</artifactId>
         <version>${glassfish.el.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-beanutils</groupId>
+        <artifactId>commons-beanutils</artifactId>
+        <version>${commons-beanutils.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
