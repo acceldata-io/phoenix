@@ -110,7 +110,8 @@
     <!-- Hadoop and Hbase-thirdparty version -->
     <!-- These are expected to be overridden to conform to cluster versions
     along with hbase.version (defined in profiles) -->
-    <hadoop.version>3.4.3.3.4.3.0-1</hadoop.version>
+    <odp.release.version>3.4.3.0-1</odp.release.version>>
+    <hadoop.version>3.4.3.${odp.release.version}</hadoop.version>
 
     <phoenix.thirdparty.version>2.1.0</phoenix.thirdparty.version>
     <hbase.suffix>hbase-${hbase.profile}</hbase.suffix>
@@ -123,7 +124,7 @@
     <hbase-2.5.runtime.version>2.5.14-hadoop3</hbase-2.5.runtime.version>
     <hbase-2.6.0.runtime.version>2.6.1-hadoop3</hbase-2.6.0.runtime.version>
     <hbase-2.6.3.runtime.version>2.6.3-hadoop3</hbase-2.6.3.runtime.version>
-    <hbase-2.6.runtime.version>2.6.4.3.4.3.0-1</hbase-2.6.runtime.version>
+    <hbase-2.6.runtime.version>2.6.4.${odp.release.version}</hbase-2.6.runtime.version>
 
     <compileSource>17</compileSource>
     <maven.compiler.source>${compileSource}</maven.compiler.source>
@@ -167,7 +168,7 @@
     <stream.version>2.9.5</stream.version>
     <icu4j.version>72.1</icu4j.version>
     <guice.version>5.1.0</guice.version>
-    <zookeeper.version>3.8.6.3.4.3.0-1</zookeeper.version>
+    <zookeeper.version>3.8.6.${odp.release.version}</zookeeper.version>
     <curator.version>4.2.0</curator.version>
     <jcodings.version>1.0.55</jcodings.version>
     <jetty.version>9.4.58.v20250814</jetty.version>
