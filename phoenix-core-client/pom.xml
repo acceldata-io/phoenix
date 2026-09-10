@@ -22,14 +22,14 @@
   <parent>
     <groupId>org.apache.phoenix</groupId>
     <artifactId>phoenix</artifactId>
-    <version>5.2.1.3.3.6.5-SNAPSHOT</version>
+    <version>5.2.1.3.3.6.501-SNAPSHOT</version>
   </parent>
   <artifactId>phoenix-core-client</artifactId>
   <name>Phoenix Core Client</name>
   <description>Core Phoenix Client codebase</description>
 
   <properties>
-    <odp.release.version>3.3.6.5-SNAPSHOT</odp.release.version>
+    <odp.release.version>3.3.6.501-SNAPSHOT</odp.release.version>
     <hbase.version>2.6.2.${odp.release.version}</hbase.version>
   </properties>
 
